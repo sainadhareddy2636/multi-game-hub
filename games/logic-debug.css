@@ -1,0 +1,98 @@
+/* Page and Header */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Game Container */
+.game-container {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 900px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.controls select, .controls span {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.feedback-container {
+    margin-top: 20px;
+}
+
+/* Buttons */
+.game-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.game-btn.quit {
+    background: linear-gradient(45deg, #333, #555);
+}
+
+.game-btn.hint {
+    background: linear-gradient(45deg, #fbc531, #e1b12c);
+    color: #000;
+}
+
+/* SVG Gate Styles */
+text {
+    pointer-events: none;
+    font-weight: bold;
+    font-size: 16px;
+    fill: white;
+}
+
+.output-text {
+    font-weight: bold;
+    font-size: 16px;
+    fill: yellow;
+}
+
+/* Circuit Container */
+#circuit-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}

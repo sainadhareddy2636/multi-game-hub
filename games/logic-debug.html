@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logic Circuit Debugging</title>
+<link rel="stylesheet" href="logic-debug.css">
+</head>
+<body>
+<header class="header">
+    <h1>Logic Circuit Debugging Challenge</h1>
+</header>
+
+<div class="game-container">
+    <div class="controls">
+        <label for="time-select">Select Duration:</label>
+        <select id="time-select">
+            <option value="60">1 Minute</option>
+            <option value="120">2 Minutes</option>
+            <option value="300">5 Minutes</option>
+        </select>
+        <span>Time Left: <span id="timer">60</span>s</span>
+        <button id="start-game" class="game-btn">Start Game</button>
+        <button id="quit-game" class="game-btn quit">Quit</button>
+        <button id="hint-game" class="game-btn hint">Hint</button>
+        <span id="hint-status"></span>
+    </div>
+
+    <div id="circuit-container">
+        <svg id="circuit-svg" width="800" height="400"></svg>
+    </div>
+
+    <div class="feedback-container">
+        <p id="feedback"></p>
+        <p id="score">Correct Gates: 0</p>
+    </div>
+</div>
+
+<script src="logic-debug.js"></script>
+</body>
+</html>
