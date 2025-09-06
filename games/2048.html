@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2048 Game</title>
+<link rel="stylesheet" href="game2048.css">
+</head>
+<body>
+
+<!-- Game Header -->
+<header>
+    <h1>2048 Game</h1>
+    <div class="controls">
+        <button onclick="newGame()">New Game</button>
+        <span id="score">Score: 0</span>
+        <span id="timer">Time: 0s</span>
+    </div>
+</header>
+<div id="controls-container">
+    <button id="toggle-controls">Show Controls</button>
+    <div id="controls-info" class="closed">
+        <h2>Controls</h2>
+        <ul>
+            <li><strong>Desktop:</strong> Use <kbd>Arrow Keys</kbd> to move tiles.</li>
+            <li><strong>Mobile:</strong> Swipe in the direction you want to move.</li>
+            <li><strong>New Game:</strong> Click the "New Game" button.</li>
+            <li><strong>Undo:</strong> Press <kbd>U</kbd> to undo last move (max 5 moves).</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<!-- Game Board -->
+<div id="game-board"></div>
+
+<script src="game2048.js"></script>
+</body>
+</html>
