@@ -204,24 +204,73 @@ header {
     }
 }
 /* --- Make Board Responsive --- */
+/* --- Sudoku Board --- */
 #sudoku-board {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 1fr);
-    gap: 2px;
+    gap: 0; /* Remove gaps to form a table look */
     justify-content: center;
     margin: 2rem 0;
-    background: #222;
-    padding: 5px;
-    border-radius: 15px;
+    background: #000; /* solid border look */
+    border: 3px solid #000;
     box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-    width: min(90vw, 540px); /* max width 540px, scale down on small screens */
-    aspect-ratio: 1; /* keeps it square */
+    width: min(90vw, 540px);
+    aspect-ratio: 1;
 }
 
+/* --- Cells --- */
 .cell {
-    font-size: calc(10px + 1.2vw); /* scales text with screen size */
+    background: #fff;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border: 1px solid #888;
+    border-radius: 0; /* remove curved corners */
+    transition: background-color 0.2s ease;
 }
+
+/* Fixed cells */
+.cell.fixed {
+    font-weight: bold;
+    color: #000;
+    background: #e0e0e0;
+}
+
+/* Selected cell */
+.cell.selected {
+    background-color: #7ec8ff;
+    box-shadow: inset 0 0 0 2px #0077cc;
+}
+
+/* Highlighted row/col */
+.cell.highlight {
+    background-color: #d0ebff;
+}
+
+/* Hint and wrong styles */
+.cell.hinted {
+    background-color: #fff3bf;
+    animation: hintFlash 0.5s ease-in-out;
+}
+.cell.wrong {
+    color: #e63946;
+    font-weight: bold;
+    animation: shake 0.3s;
+}
+
+/* --- 3x3 bold borders --- */
+#sudoku-board > :nth-child(3n) {
+    border-right: 2px solid #000;
+}
+#sudoku-board > :nth-child(n+19):nth-child(-n+27),
+#sudoku-board > :nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #000;
+}
+
 @media (max-width: 480px) {
     .controls button {
         padding: 8px 12px;

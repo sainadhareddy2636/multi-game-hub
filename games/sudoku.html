@@ -1,46 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sudoku Game</title>
-<link rel="stylesheet" href="sudoku.css">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
+    <link rel="stylesheet" href="sudoku.css">
+    </head>
+    <body>
 
-<!-- Difficulty Selection Screen -->
-<div id="difficulty-screen">
-    <h1>Sudoku Game</h1>
-    <p>Select Difficulty to Start</p>
-    <div class="difficulty-cards">
-        <div class="difficulty-card" onclick="startGame('easy')">
-            <h2>Easy</h2>
-            <p>Relaxed gameplay</p>
-        </div>
-        <div class="difficulty-card" onclick="startGame('medium')">
-            <h2>Medium</h2>
-            <p> Moderate challenge</p>
-        </div>
-        <div class="difficulty-card" onclick="startGame('hard')">
-            <h2>Hard</h2>
-            <p>Test your skills</p>
+    <!-- Difficulty Selection Screen -->
+    <div id="difficulty-screen">
+        <h1>Sudoku Game</h1>
+        <p>Select Difficulty to Start</p>
+        <div class="difficulty-cards">
+            <div class="difficulty-card" onclick="startGame('easy')">
+                <h2>Easy</h2>
+                <p>Relaxed gameplay</p>
+            </div>
+            <div class="difficulty-card" onclick="startGame('medium')">
+                <h2>Medium</h2>
+                <p> Moderate challenge</p>
+            </div>
+            <div class="difficulty-card" onclick="startGame('hard')">
+                <h2>Hard</h2>
+                <p>Test your skills</p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Main Game Screen -->
-<div id="game-screen" style="display:none;">
-    <header>
-        <div class="controls">
-            <button onclick="undo()">Undo</button>
-            <button onclick="showHint()">Hint (<span id="hint-count">3</span> left)</button>
-            <span id="mistakes">Mistakes: 0</span>
-            <span id="timer">Time: 0s</span>
-        </div>
-    </header>
-    <div id="sudoku-board"></div>
-</div>
+    <!-- Main Game Screen -->
+    <div id="game-screen" style="display:none;">
+        <header>
+            <div class="controls">
+                <button onclick="undo()">Undo</button>
+                <button onclick="showHint()">Hint (<span id="hint-count">3</span> left)</button>
+                <span id="mistakes">Mistakes: 0</span>
+                <span id="timer">Time: 0s</span>
+            </div>
+        </header>
+        <div id="sudoku-board"></div>
+    </div>
 
-<script src="sudoku.js"></script>
-</body>
-</html>
+    <script src="sudoku.js"></script>
+    </body>
+    </html>
