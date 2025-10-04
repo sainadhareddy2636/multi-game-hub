@@ -1,4 +1,4 @@
-/* Page and Header */
+/* --- Page and Header --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -13,9 +13,9 @@ body {
 
 .header {
     width: 100%;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -25,31 +25,90 @@ body {
     font-size: 2em;
 }
 
-/* Game Container */
+/* --- Game Container --- */
 .game-container {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
     width: 90%;
     max-width: 900px;
 }
 
+/* --- Controls Section --- */
 .controls {
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.controls select, .controls span {
-    margin: 0 10px;
-    font-size: 16px;
+.controls label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fff;
 }
 
-.feedback-container {
-    margin-top: 20px;
+/* --- Fixed Dropdown Styling --- */
+.controls select {
+    background: #ffffff;
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
-/* Buttons */
+.controls select:hover {
+    background: #f1f1f1;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+/* --- Timer Display --- */
+#timer {
+    display: inline-block;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(0, 114, 255, 0.6);
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- Timer Animation --- */
+@keyframes pulseTimer {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(0, 114, 255, 0.6); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 114, 255, 0.8); }
+}
+
+#timer.pulse {
+    animation: pulseTimer 1s infinite;
+}
+
+/* --- Hint Status --- */
+#hint-status {
+    font-size: 1rem;
+    color: #ffe066;
+    font-weight: bold;
+}
+
+/* --- Buttons --- */
 .game-btn {
     padding: 10px 20px;
     margin: 5px;
@@ -64,7 +123,7 @@ body {
 
 .game-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .game-btn.quit {
@@ -76,7 +135,12 @@ body {
     color: #000;
 }
 
-/* SVG Gate Styles */
+/* --- Feedback Section --- */
+.feedback-container {
+    margin-top: 20px;
+}
+
+/* --- SVG Gate Styles --- */
 text {
     pointer-events: none;
     font-weight: bold;
@@ -90,9 +154,33 @@ text {
     fill: yellow;
 }
 
-/* Circuit Container */
+/* --- Circuit Container --- */
 #circuit-container {
     display: flex;
     justify-content: center;
     overflow-x: auto;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    #timer {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+
+    .game-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .controls select {
+        width: 80%;
+        font-size: 0.95rem;
+    }
 }
